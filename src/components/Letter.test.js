@@ -18,14 +18,41 @@ describe('Letter Component', () => {
         container = null;
     });
     
-    it('Render with or without letter', () => {
+    it('Should render letter', () => {
+        act(() => {
+            render(Letter("a","", ()=>{} ) , container);
+        });
+        expect(container.textContent).toBe("a");
+
         act(() => {
             render(Letter("K","", ()=>{} ) , container);
         });
         expect(container.textContent).toBe("K");
+    });
 
+    it('Should render empty value if value is not a valid letter', () => {
         act(() => {
             render(Letter(15,"", ()=>{} ) , container);
+        });
+        expect(container.textContent).toBe('');
+
+        act(() => {
+            render(Letter('15',"", ()=>{} ) , container);
+        });
+        expect(container.textContent).toBe('');
+
+        act(() => {
+            render(Letter('$',"", ()=>{} ) , container);
+        });
+        expect(container.textContent).toBe('');
+
+        act(() => {
+            render(Letter([],"", ()=>{} ) , container);
+        });
+        expect(container.textContent).toBe('');
+
+        act(() => {
+            render(Letter({},"", ()=>{} ) , container);
         });
         expect(container.textContent).toBe('');
 
