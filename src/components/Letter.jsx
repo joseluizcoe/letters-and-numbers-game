@@ -1,21 +1,38 @@
 import React from 'react';
 import LetterStyled from './LetterStyled';
 
-function Letter(letter, className, update) {
-    function handdleClick(){
-      update(letter);
-      window.responsiveVoice.speak(letter, "Brazilian Portuguese Female");
+export function Letter(letter, className, update) {
+    function handdleClick() {
+      if(update) {
+        update(letter[0]);
+      }
+
+      let voice = window.responsiveVoice;
+      return voice ? voice.speak(letter, "Brazilian Portuguese Female") : undefined;
     }
   
+    function isValid() {
+      let letterList = 'abcdefghijklmnopqrstuvwxyz';
+      let isString = (typeof letter === 'string');
+      let thisLetter = (isString) ? letter.toLowerCase() : '';
+      let isThisLetterInLetterList = (letterList.indexOf(thisLetter) >= 0 );
+
+      return isThisLetterInLetterList;
+    }
+
     return (
       <LetterStyled
         className={className}
-        key={letter}
+        key={letter[0]}
         onClick={
           (event) => handdleClick()
         }
       >
-        {letter}
+        { 
+          ( isValid() )
+          ? letter[0]
+          : ''
+        }
       </LetterStyled>
     )
 }
