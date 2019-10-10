@@ -18,45 +18,50 @@ describe('Letter Component', () => {
         container = null;
     });
     
-    it('Should render letter', () => {
+    it('Should render just one letter', () => {
         act(() => {
-            render(Letter("a","", ()=>{} ) , container);
+            render(Letter("a") , container);
         });
         expect(container.textContent).toBe("a");
 
         act(() => {
-            render(Letter("K","", ()=>{} ) , container);
+            render(Letter("axfsdfdsf") , container);
+        });
+        expect(container.textContent).toBe("a");
+
+
+        act(() => {
+            render(Letter("K") , container);
         });
         expect(container.textContent).toBe("K");
     });
 
     it('Should render empty value if value is not a valid letter', () => {
         act(() => {
-            render(Letter(15,"", ()=>{} ) , container);
+            render(Letter(15) , container);
         });
         expect(container.textContent).toBe('');
 
         act(() => {
-            render(Letter('15',"", ()=>{} ) , container);
+            render(Letter('15') , container);
         });
         expect(container.textContent).toBe('');
 
         act(() => {
-            render(Letter('$',"", ()=>{} ) , container);
+            render(Letter('$') , container);
         });
         expect(container.textContent).toBe('');
 
         act(() => {
-            render(Letter([],"", ()=>{} ) , container);
+            render(Letter([]) , container);
         });
         expect(container.textContent).toBe('');
 
         act(() => {
-            render(Letter({},"", ()=>{} ) , container);
+            render(Letter({}) , container);
         });
         expect(container.textContent).toBe('');
 
-        return undefined;
     });
 
 });

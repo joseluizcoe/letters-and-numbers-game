@@ -8,13 +8,13 @@ export function Letter(letter, className, update) {
       }
 
       let voice = window.responsiveVoice;
-      return voice ? voice.speak(letter, "Brazilian Portuguese Female") : undefined;
+      return voice ? voice.speak(letter[0], "Brazilian Portuguese Female") : undefined;
     }
   
     function isValid() {
       let letterList = 'abcdefghijklmnopqrstuvwxyz';
       let isString = (typeof letter === 'string');
-      let thisLetter = (isString) ? letter.toLowerCase() : '';
+      let thisLetter = (isString) ? letter[0].toLowerCase() : '';
       let isThisLetterInLetterList = (letterList.indexOf(thisLetter) >= 0 );
 
       return isThisLetterInLetterList;
