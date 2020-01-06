@@ -7,8 +7,11 @@ function Letters(props){
     return(<>
         {
             letters.map(
-              (letter, index) =>
-                Letter(letter, COLORS[index], updateLastClickedVowel)
+              (letter, index) => {
+                let color = Object.keys(COLORS)[index];
+                return Letter(letter, String(color), updateLastClickedVowel)
+              }
+                
             )
           }
     </>)
