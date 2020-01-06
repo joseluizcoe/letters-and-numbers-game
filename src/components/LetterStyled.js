@@ -11,8 +11,8 @@ const LetterStyled = styled.button`
   background: #f0f0f0;
   color: #666;
   width: 100%;
+  height: 18vh;
   border: 0;
-  border-radius: 5px;
   overflow: hidden;
   &:focus {
     cursor: pointer;
@@ -20,35 +20,35 @@ const LetterStyled = styled.button`
   }
 
   &.red {
-    background: #900;
+    background: #400;
     color: white;
     &:hover {
       background: #f00;
     }
   }
   &.green {
-    background: #090;
+    background: #040;
     color: white;
     &:hover {
       background: #0c0;
     }
   }
   &.blue {
-    background: #009;
+    background: #004;
     color: white;
     &:hover {
       background: #00c;
     }
   }
   &.yellow {
-    background: #ee0;
+    background: #440;
     color: black;
     &:hover {
       background: #cc0;
     }
   }
   &.purple {
-    background: #0ee;
+    background: #044;
     color: white;
     &:hover {
       background: #0cc;
