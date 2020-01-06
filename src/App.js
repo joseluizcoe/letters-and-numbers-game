@@ -21,8 +21,8 @@ function App() {
       <Feedback>
         {
           lastClickedVowel
-          ? 'Você clicou na letra'
-          : 'Clique em uma vogal'
+          ? 'Você clicou na letra: '
+          : 'Clique em uma vogal: '
         }
         <span>
           {lastClickedVowel}
