@@ -21,33 +21,33 @@ const LetterStyled = styled.button`
   }
 
   &.red {
-    background: #400;
+    background: #ffb48f;
     &:hover {
       background: #f00;
     }
   }
   &.green {
-    background: #040;
+    background: #f5e6cc;
     &:hover {
       background: #0c0;
     }
   }
   &.blue {
-    background: #004;
+    background: #17e9e0;
     &:hover {
       background: #00c;
     }
   }
   &.yellow {
-    background: #440;
+    background: #fccd04;
     &:hover {
-      background: #cc0;
+      background: #ffaa09;
     }
   }
   &.purple {
-    background: #044;
+    background: #a64ac9;
     &:hover {
-      background: #0cc;
+      background: #ff4aff;
     }
   }
 `;
