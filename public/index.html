@@ -15,5 +15,16 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <button id="fullScreen">Tela Cheia</button>
+
+    <script>
+      const $ = document.querySelector.bind(document);
+      const btnFullScreen = $("#fullScreen");
+      btnFullScreen.onclick = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        $("#root").requestFullscreen();
+      };
+    </script>
   </body>
 </html>
