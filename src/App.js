@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Letters, ContainerFlex , Feedback} from './components';
-import { LETTERS } from './constants';
+import { Letters, ContainerFlex, Colors , Feedback} from './components';
+import { LETTERS, COLORS } from './constants';
 
 function App() {
-  const [letters] = useState(LETTERS);
-  const [lastClickedVowel, updateLastClickedVowel] = useState('');
+  const [
+    lastClickedVowel, 
+    updateLastClickedVowel,
+    updateLastClickedColor
+  ] = useState('');
 
   useEffect( 
     () => {
@@ -26,10 +29,19 @@ function App() {
         </span>
       </Feedback>
       <ContainerFlex>
-        <Letters
-          letters={letters}
-          updateLastClickedVowel={updateLastClickedVowel}
-        />
+        {
+          LETTERS.length
+          ?
+          <Letters
+            letters={LETTERS}
+            updateLastClickedVowel={updateLastClickedVowel}
+          />
+          : 
+          <Colors
+            colors={Object.keys(COLORS)}
+            updateLastClickedColor={updateLastClickedColor}
+          />
+        }
       </ContainerFlex>
     </>
   );

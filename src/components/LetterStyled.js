@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const LetterStyled = styled.button`
+    transition: all 0.5s ease;
     padding: 0;
     margin : 0;
     text-align: center;
@@ -13,6 +14,13 @@ const LetterStyled = styled.button`
     width : 17%;
     border :0;
     border-radius : 5%;
+    overflow: hidden;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        outline: none;
+        font-size : 14em;
+    }
     &.red {
         background: red;
         color: white;
