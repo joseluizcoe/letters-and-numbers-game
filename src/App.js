@@ -3,16 +3,11 @@ import { Letters, ContainerFlex} from './components';
 import { LETTERS } from './constants';
 
 function App() {
-  const [
-    lastClickedVowel, 
-    updateLastClickedVowel,
-  ] = useState('');
+  const [ clickedVowel, setClickedVowel] = useState(null);
 
-  useEffect( 
-    () => {
-      document.title = `${ lastClickedVowel } clicked`;
-    },
-    [lastClickedVowel]
+  useEffect( () => {
+      document.title = `${ clickedVowel } clicked`;
+    }, [clickedVowel]
   );
 
   return (
@@ -20,7 +15,7 @@ function App() {
       <ContainerFlex>
           <Letters
             letters={LETTERS}
-            updateLastClickedVowel={updateLastClickedVowel}
+            updateLastClickedVowel={setClickedVowel}
           />
       </ContainerFlex>
     </>
