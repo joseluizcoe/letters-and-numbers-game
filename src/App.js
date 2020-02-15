@@ -1,19 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Letters } from './components';
-import { LETTERS } from './constants';
+import React from 'react';
+import LetterProvider from './context/LetterProvider';
+import Letters from './components/Letters';
 
 function App() {
-  const [ clickedVowel, setClickedVowel] = useState(null);
-
-  useEffect( () => {
-      document.title = `${ clickedVowel } clicked`;
-    }, [clickedVowel]
+  return (
+    <LetterProvider>
+      <Letters />
+    </LetterProvider>
   );
-
-  return (<Letters
-    letters={LETTERS}
-    updateLastClickedVowel={setClickedVowel}
-  />);
 }
 
 export default App;
