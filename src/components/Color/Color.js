@@ -1,6 +1,6 @@
 import React from 'react';
-import ColorStyled from './ColorStyled';
-import { COLORS } from './../constants';
+import ColorStyled from '../ColorStyled';
+import { COLORS } from '../../constants';
 
 export function Color(color, className, update) {
     function handdleClick() {
