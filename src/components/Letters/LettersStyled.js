@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const LettersStyled = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   bottom: 0;
 `;
 

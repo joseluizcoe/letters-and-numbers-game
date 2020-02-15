@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-export const LetterStyled = styled.button`
+export const LetterStyled = styled.a`
   transition: all 0.5s ease;
   padding: 0;
   margin: 1px;
@@ -14,46 +14,57 @@ export const LetterStyled = styled.button`
   height: 100vh;
   border: 0;
   overflow: hidden;
-  &:focus {
+
+  &:hover {
     cursor: pointer;
     outline: none;
     color: white;
   }
 
-  ${props => props.red && css`
-    background: #ffb48f;
-    &:hover {
-      background: #f00;
-    }
-  `}
+  ${props =>
+    props.red &&
+    css`
+      background: #ffb48f;
+      &:hover {
+        background: #f00;
+      }
+    `}
 
-  ${props => props.green && css`
-    background: #f5e6cc;
-    &:hover {
-      background: #0c0;
-    }
-  `}
+  ${props =>
+    props.green &&
+    css`
+      background: #f5e6cc;
+      &:hover {
+        background: #0c0;
+      }
+    `}
 
-  ${props => props.blue && css`
-    background: #17e9e0;
-    &:hover {
-      background: #00c;
-    }
-  `}
+  ${props =>
+    props.blue &&
+    css`
+      background: #17e9e0;
+      &:hover {
+        background: #00c;
+      }
+    `}
 
-  ${props => props.yellow && css`
-    background: #fccd04;
-    &:hover {
-      background: #ffaa09;
-    }
-  `}
+  ${props =>
+    props.yellow &&
+    css`
+      background: #fccd04;
+      &:hover {
+        background: #ffaa09;
+      }
+    `}
 
-  ${props => props.purple && css`
-    background: #a64ac9;
-    &:hover {
-      background: #ff4aff;
-    }
-  `}
+  ${props =>
+    props.purple &&
+    css`
+      background: #a64ac9;
+      &:hover {
+        background: #ff4aff;
+      }
+    `}
 
 `;
 
