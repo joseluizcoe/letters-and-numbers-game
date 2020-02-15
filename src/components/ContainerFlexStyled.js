@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const ContainerFlex = styled.div`
+const ContainerFlexStyled = styled.div`
     width: 100%;
     display:flex;
     flex-direction : row;
@@ -9,4 +9,4 @@ const ContainerFlex = styled.div`
 
 `;
 
-export default ContainerFlex;
+export default ContainerFlexStyled;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Letters, ContainerFlex} from './components';
+import { Letters, ContainerFlexStyled} from './components';
 import { LETTERS } from './constants';
 
 function App() {
@@ -12,12 +12,12 @@ function App() {
 
   return (
     <>
-      <ContainerFlex>
+      <ContainerFlexStyled>
           <Letters
             letters={LETTERS}
             updateLastClickedVowel={setClickedVowel}
           />
-      </ContainerFlex>
+      </ContainerFlexStyled>
     </>
   );
 }
