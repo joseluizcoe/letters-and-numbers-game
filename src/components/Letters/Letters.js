@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Letter from '../Letter/Letter';
+import Letter from '../Letter';
 import * as S from './LettersStyled';
 import LettersContext from '../../context';
 
@@ -8,20 +8,21 @@ const Letters = () => {
     LettersContext
   );
 
-    return (
-      <S.LettersStyled>
-        { 
+  return (
+    <S.LettersStyled>
+      { 
         letters.map(
           (letter, index) => 
             <Letter
               key={index}
-              letter={letter}
-              clickFunction={setClickedVowel}
+              index={index}
+              letter={letter[0]}
+              update={setClickedVowel}
             />
-          )
-        }
-      </S.LettersStyled>
-    );
+        )
+      }
+    </S.LettersStyled>
+  );
 }
 
 export default Letters;

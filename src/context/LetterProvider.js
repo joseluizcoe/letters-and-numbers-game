@@ -7,12 +7,34 @@ const LetterProvider = (props) => {
 
   useEffect(() => {
     document.title = `${clickedVowel} clicked`;
+    speak(clickedVowel);
   }, [clickedVowel]);
 
+  const isValidLetter = (letter) => {
+    let letterList = 'abcdefghijklmnopqrstuvwxyz';
+    let isString = typeof letter === 'string';
+    let thisLetter = isString ? letter.toLowerCase() : '';
+    let isThisLetterInLetterList =
+      letterList.indexOf(thisLetter) >= 0;
+
+    return isThisLetterInLetterList;
+  };
+
+  const speak = (somethingToSpeak) => {
+    let voice = window.responsiveVoice;
+    return voice && 
+      voice.speak(
+        somethingToSpeak,
+        'Brazilian Portuguese Female'
+      );
+  };
+  
   const contextValues = {
     clickedVowel,
     setClickedVowel,
-    letters: LETTERS,
+    isValidLetter,
+    speak,
+    letters: LETTERS
   };
 
   return (
