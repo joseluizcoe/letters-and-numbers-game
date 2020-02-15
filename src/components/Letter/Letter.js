@@ -1,5 +1,5 @@
 import React from 'react';
-import LetterStyled from './LetterStyled';
+import * as S from './LetterStyled';
 
 export function Letter(letter, className, update) {
     function handdleClick() {
@@ -21,20 +21,14 @@ export function Letter(letter, className, update) {
     }
 
     return (
-      <LetterStyled
+      <S.LetterStyled
         className={className}
         key={letter[0]}
-        onClick={
-          (event) => handdleClick()
-        }
+        onClick={event => handdleClick()}
       >
-        { 
-          ( isValid() )
-          ? letter[0]
-          : ''
-        }
-      </LetterStyled>
-    )
+        {isValid() ? letter[0] : ''}
+      </S.LetterStyled>
+    );
 }
 
 export default Letter;

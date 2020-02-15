@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const LetterStyled = styled.button`
+export const LetterStyled = styled.button`
   transition: all 0.5s ease;
   padding: 0;
   margin: 1px;
@@ -52,4 +52,4 @@ const LetterStyled = styled.button`
   }
 `;
 
-export default LetterStyled;
+export default { LetterStyled };

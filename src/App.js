@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Letters, ContainerFlexStyled} from './components';
+import { Letters } from './components';
 import { LETTERS } from './constants';
 
 function App() {
@@ -10,16 +10,10 @@ function App() {
     }, [clickedVowel]
   );
 
-  return (
-    <>
-      <ContainerFlexStyled>
-          <Letters
-            letters={LETTERS}
-            updateLastClickedVowel={setClickedVowel}
-          />
-      </ContainerFlexStyled>
-    </>
-  );
+  return (<Letters
+    letters={LETTERS}
+    updateLastClickedVowel={setClickedVowel}
+  />);
 }
 
 export default App;

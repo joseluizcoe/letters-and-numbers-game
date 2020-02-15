@@ -1,10 +1,12 @@
 import React from 'react';
 import Letter from '../Letter/Letter';
+import * as S from './LettersStyled';
 import {COLORS} from '../../constants';
 
 function Letters(props){
     let { letters, updateLastClickedVowel } = props;
-    return(<>
+    return (
+      <S.LettersStyled>
       {
         letters.map(
           (letter, index) => {
@@ -14,7 +16,8 @@ function Letters(props){
             
         )
       }
-    </>)
+      </S.LettersStyled>
+    )
 }
 
 export default Letters;

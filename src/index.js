@@ -4,6 +4,6 @@ import App from './App';
 
 const rootDiv = document.querySelector('#root');
 ReactDOM.render(
-    <App />,
-    rootDiv,
+  <App />,
+  rootDiv,
 );
