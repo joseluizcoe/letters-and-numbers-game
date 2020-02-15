@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import LettersContext from './index';
 import { LETTERS } from '../constants';
 
-function LetterProvider(props) {
+const LetterProvider = (props) => {
   const [clickedVowel, setClickedVowel] = useState(null);
 
   useEffect(() => {

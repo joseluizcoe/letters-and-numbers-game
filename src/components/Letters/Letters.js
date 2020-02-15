@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Letter from '../Letter/Letter';
 import * as S from './LettersStyled';
-import {COLORS} from '../../constants';
 import LettersContext from '../../context';
 
 const Letters = () => {
@@ -9,18 +8,18 @@ const Letters = () => {
     LettersContext
   );
 
-  console.log('letters', letters);
-
     return (
       <S.LettersStyled>
-        {letters.map((letter, index) => {
-          let color = Object.keys(COLORS)[index];
-          return Letter(
-            letter,
-            String(color),
-            setClickedVowel
-          );
-        })}
+        { 
+        letters.map(
+          (letter, index) => 
+            <Letter
+              key={index}
+              letter={letter}
+              clickFunction={setClickedVowel}
+            />
+          )
+        }
       </S.LettersStyled>
     );
 }

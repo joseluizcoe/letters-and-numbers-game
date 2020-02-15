@@ -1,34 +1,44 @@
 import React from 'react';
 import * as S from './LetterStyled';
 
-export function Letter(letter, className, update) {
-    function handdleClick() {
-      if(update) {
-        update(letter[0]);
-      }
+export const Letter = (props) => {
+  const {letter, update} = props;
 
-      let voice = window.responsiveVoice;
-      return voice ? voice.speak(letter[0], "Brazilian Portuguese Female") : undefined;
-    }
-  
-    function isValid() {
-      let letterList = 'abcdefghijklmnopqrstuvwxyz';
-      let isString = (typeof letter === 'string');
-      let thisLetter = (isString) ? letter[0].toLowerCase() : '';
-      let isThisLetterInLetterList = (letterList.indexOf(thisLetter) >= 0 );
-
-      return isThisLetterInLetterList;
+  const handdleClick = (event) => {
+    if(update) {
+      update(letter[0]);
     }
 
-    return (
-      <S.LetterStyled
-        className={className}
-        key={letter[0]}
-        onClick={event => handdleClick()}
-      >
-        {isValid() ? letter[0] : ''}
-      </S.LetterStyled>
-    );
+    let voice = window.responsiveVoice;
+    return voice ? voice.speak(letter[0], "Brazilian Portuguese Female") : undefined;
+  }
+
+  const isValidLetter = () => {
+    let letterList = 'abcdefghijklmnopqrstuvwxyz';
+    let isString = typeof letter === 'string';
+    let thisLetter = isString
+      ? letter[0].toLowerCase()
+      : '';
+    let isThisLetterInLetterList =
+      letterList.indexOf(thisLetter) >= 0;
+
+    return isThisLetterInLetterList;
+  };
+
+  const thisLetterIsValid = isValidLetter();
+
+  return (
+    <>
+      {thisLetterIsValid && (
+        <S.LetterStyled
+          key={letter[0]}
+          onClick={handdleClick}
+        >
+          {letter[0]}
+        </S.LetterStyled>
+      )}
+    </>
+  );
 }
 
 export default Letter;

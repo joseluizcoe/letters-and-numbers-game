@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 export const LetterStyled = styled.button`
   transition: all 0.5s ease;
@@ -20,36 +20,41 @@ export const LetterStyled = styled.button`
     color: white;
   }
 
-  &.red {
+  ${props => props.red && css`
     background: #ffb48f;
     &:hover {
       background: #f00;
     }
-  }
-  &.green {
+  `}
+
+  ${props => props.green && css`
     background: #f5e6cc;
     &:hover {
       background: #0c0;
     }
-  }
-  &.blue {
+  `}
+
+  ${props => props.blue && css`
     background: #17e9e0;
     &:hover {
       background: #00c;
     }
-  }
-  &.yellow {
+  `}
+
+  ${props => props.yellow && css`
     background: #fccd04;
     &:hover {
       background: #ffaa09;
     }
-  }
-  &.purple {
+  `}
+
+  ${props => props.purple && css`
     background: #a64ac9;
     &:hover {
       background: #ff4aff;
     }
-  }
+  `}
+
 `;
 
 export default { LetterStyled };
