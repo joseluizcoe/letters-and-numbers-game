@@ -9,7 +9,7 @@ export function Color(color, className, update) {
       }
 
       let voice = window.responsiveVoice;
-      let voiceName = "Brazilian Portuguese Female";
+      let voiceName = 'Brazilian Portuguese Female';
 
       return voice ?
         voice
@@ -20,12 +20,6 @@ export function Color(color, className, update) {
         : undefined;
     }
   
-    function isValid() {
-      let isThisColorInLetterList = (COLORS[color]);
-
-      return isThisColorInLetterList;
-    }
-
     return (
       <ColorStyled
         className={className}
@@ -34,11 +28,6 @@ export function Color(color, className, update) {
           (event) => handdleClick()
         }
       >
-        { 
-          ( isValid() )
-          ? ':)'
-          : ''
-        }
       </ColorStyled>
     )
 }
