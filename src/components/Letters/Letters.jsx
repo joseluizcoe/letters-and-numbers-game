@@ -1,6 +1,6 @@
 import React from 'react';
-import Letter from './Letter';
-import {COLORS} from '../constants';
+import Letter from '../Letter/Letter';
+import {COLORS} from '../../constants';
 
 function Letters(props){
     let { letters, updateLastClickedVowel } = props;
