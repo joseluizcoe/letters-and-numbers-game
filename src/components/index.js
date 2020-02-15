@@ -1,12 +1,12 @@
 import Colors from './Colors';
-import ContainerFlex from './ContainerFlex';
+import ContainerFlexStyled from './ContainerFlexStyled';
 import Feedback from './FeedbackStyled';
-import Letters from './Letters';
-import Letter from './Letter';
+import Letters from './Letters/Letters';
+import Letter from './Letter/Letter';
 
 export {
     Colors,
-    ContainerFlex,
+    ContainerFlexStyled,
     Feedback,
     Letters,
     Letter,
