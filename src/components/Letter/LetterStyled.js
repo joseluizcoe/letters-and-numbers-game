@@ -14,6 +14,14 @@ export const LetterStyled = styled.a`
   height: 100vh;
   border: 0;
   overflow: hidden;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  user-select:none;
+  -moz-user-select:none;
+  -webkit-touch-callout:none;
+  -ms-user-select:none;
 
   &:hover {
     cursor: pointer;
