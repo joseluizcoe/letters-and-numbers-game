@@ -2,21 +2,22 @@ import styled, {css} from 'styled-components';
 
 export const LetterStyled = styled.a`
   transition: all 0.5s ease;
-  padding: 10px;
-  margin: 1px;
+  padding: 10px 15px;
+  margin: 3px;
   text-align: center;
-  font-size: 5em;
+  font-size: 2.5em;
+  width: 15vw;
   font-family: 'Vollkorn', serif;
   text-transform: uppercase;
   background: #f0f0f0;
   color: #888;
-  width: 10%;
   border: 0;
   overflow: hidden;
   display:flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
 
   user-select:none;
   -moz-user-select:none;

@@ -12,19 +12,21 @@
     <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=XhDEqru1"></script>
   </head>
-  <body>
+  <body onload="fullScreen()">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <button id="fullScreen">Tela Cheia</button>
 
     <script>
-      const $ = document.querySelector.bind(document);
-      const btnFullScreen = $("#fullScreen");
-      btnFullScreen.onclick = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        $("#root").requestFullscreen();
-      };
+      const fullScreen = () =>{
+        const $ = document.querySelector.bind(document);
+        const btnFullScreen = $("#fullScreen");
+        btnFullScreen.onclick = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          $("body").requestFullscreen();
+        };
+      }
     </script>
   </body>
 </html>
