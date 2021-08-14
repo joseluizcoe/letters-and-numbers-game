@@ -14,10 +14,9 @@ const LetterProvider = (props) => {
     let letterList = 'abcdefghijklmnopqrstuvwxyz';
     let isString = typeof letter === 'string';
     let thisLetter = isString ? letter.toLowerCase() : '';
-    let isThisLetterInLetterList =
-      letterList.indexOf(thisLetter) >= 0;
+    let itsValidLetter = letterList.includes(thisLetter);
 
-    return isThisLetterInLetterList;
+    return itsValidLetter;
   };
 
   const speak = (somethingToSpeak) => {

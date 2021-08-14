@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 
 export const LetterStyled = styled.a`
   transition: all 0.5s ease;
-  padding: 0;
+  padding: 10px;
   margin: 1px;
   text-align: center;
   font-size: 5em;
@@ -10,11 +10,11 @@ export const LetterStyled = styled.a`
   text-transform: uppercase;
   background: #f0f0f0;
   color: #888;
-  width: 100%;
-  height: 100vh;
+  width: 10%;
   border: 0;
   overflow: hidden;
   display:flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
